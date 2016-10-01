@@ -6,12 +6,13 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
     <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.4.js"></script> -->
-    <script src="scripts/bundle.js"></script>  
-    <script src="scripts/app.js"></script>  
+    
+    <script src="bundle.js"></script>  
+    <script src="app.js"></script>  
 
 
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
   </head>
 
@@ -29,89 +30,89 @@
 
 <table id="crime" class="table table-striped tablesorter">
   <tr>
-		<th>Crime</th>
-	  <th>Incidents</th>
+    <th>Crime</th>
+    <th>Incidents</th>
     <th>Rate per capita</th>
     <th>Rank</th>
-	</tr>
+  </tr>
 
-	<tr>
-		<td>Violent Crime</td>
-	  <td>{{selectedCity.vc | number: 0}}</td>
+  <tr>
+    <td>Violent Crime</td>
+    <td>{{selectedCity.vc | number: 0}}</td>
     <td>{{selectedCity.vcPC | number: 0}}</td>
     <td>{{selectedCity.vcRank}}</td>
-	</tr>
+  </tr>
 
   <tr>
-		<td>Murder and nonnegligent manslaughter</td>
-	  <td>{{selectedCity.murder | number: 0}}</td>
+    <td>Murder and nonnegligent manslaughter</td>
+    <td>{{selectedCity.murder | number: 0}}</td>
     <td>{{selectedCity.murderPC | number: 0}}</td>
     <td>{{selectedCity.murderRank}}</td>
-	</tr>
+  </tr>
 
 
   <tr>
-		<td>Rape(1)</td>
-	  <td>{{selectedCity.rape | number: 0}}</td>
+    <td>Rape(1)</td>
+    <td>{{selectedCity.rape | number: 0}}</td>
     <td>{{selectedCity.rapePC | number: 0}}</td>
     <td>{{selectedCity.rapeRank}}</td>
-	</tr>
+  </tr>
 
   <tr>
-		<td>Rape(2)</td>
-	  <td>{{selectedCity.rapetwo | number: 0}}</td>
+    <td>Rape(2)</td>
+    <td>{{selectedCity.rapetwo | number: 0}}</td>
     <td>{{selectedCity.rapetwoPC | number: 0}}</td>
     <td>{{selectedCity.rapetwoRank}}</td>
-	</tr>
+  </tr>
 
   <tr>
-		<td>Robbery</td>
-	  <td>{{selectedCity.robbery | number: 0}}</td>
+    <td>Robbery</td>
+    <td>{{selectedCity.robbery | number: 0}}</td>
     <td>{{selectedCity.robberPC | number: 0}}</td>
     <td>{{selectedCity.robberyRank}}</td>
-	</tr>
+  </tr>
 
   <tr>
-		<td>Aggravated Assault</td>
-	  <td>{{selectedCity.agassault | number: 0}}</td>
+    <td>Aggravated Assault</td>
+    <td>{{selectedCity.agassault | number: 0}}</td>
     <td>{{selectedCity.agassaultPC | number: 0}}</td>
     <td>{{selectedCity.agassaultRank}}</td>
-	</tr>
+  </tr>
 
   <tr>
-		<td>Property Crime</td>
-	  <td>{{selectedCity.pc | number: 0}}</td>
+    <td>Property Crime</td>
+    <td>{{selectedCity.pc | number: 0}}</td>
     <td>{{selectedCity.pcPC | number: 0}}</td>
     <td>{{selectedCity.pcRank}}</td>
-	</tr>
+  </tr>
 
   <tr>
-		<td>Burglary</td>
-	  <td>{{selectedCity.burglary | number: 0}}</td>
+    <td>Burglary</td>
+    <td>{{selectedCity.burglary | number: 0}}</td>
     <td>{{selectedCity.burglaryPC | number: 0}}</td>
     <td>{{selectedCity.burglaryRank}}</td>
-	</tr>
+  </tr>
 
   <tr>
-		<td>Larceny-theft</td>
-	  <td>{{selectedCity.larceny | number: 0}}</td>
+    <td>Larceny-theft</td>
+    <td>{{selectedCity.larceny | number: 0}}</td>
     <td>{{selectedCity.larcenyPC | number: 0}}</td>
     <td>{{selectedCity.larcenyRank}}</td>
-	</tr>
+  </tr>
 
   <tr>
-		<td>Motor Vehicle Theft</td>
-	  <td>{{selectedCity.mvtheft | number: 0}}</td>
+    <td>Motor Vehicle Theft</td>
+    <td>{{selectedCity.mvtheft | number: 0}}</td>
     <td>{{selectedCity.mvtheftPC | number: 0}}</td>
     <td>{{selectedCity.mvtheftRank}}</td>
-	</tr>
+  </tr>
 
   <tr>
-		<td>Arson</td>
-	  <td>{{selectedCity.arson | number: 0}}</td>
+    <td>Arson</td>
+    <td>{{selectedCity.arson | number: 0}}</td>
     <td>{{selectedCity.arsonPC | number: 0}}</td>
     <td>{{selectedCity.arsonRank}}</td>
-	</tr>
+  </tr>
 </div>
 </table>
 <p>- Data from <a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015">FBI UCR Report for 2015</a>. State ranking per capita. The lower the rank bumber, the higher the crime rate. 
