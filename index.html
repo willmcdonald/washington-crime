@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="crime">
+  <head>   
+
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.4.js"></script> -->
+    <script src="scripts/bundle.js"></script>  
+    <script src="scripts/app.js"></script>  
+
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+
+<div ng-controller="CrimeCtrl">
+ <div class='container-fluid'>
+    <h4 class="top">Search for a city:</h4>
+    <input type="text" ng-init="selectedCity = cities[180]" ng-model="selectedCity" uib-typeahead="city as city.city for city in cities | filter:$viewValue | limitTo:15" class="form-control">
+</div>
+
+<h1 class="top">{{selectedCity.city }}</h1>
+<h4 class="top">Population: {{selectedCity.population | number: 0 }}</h4>
+
+<table id="crime" class="table table-striped tablesorter">
+  <tr>
+		<th>Crime</th>
+	  <th>Incidents</th>
+    <th>Rate per capita</th>
+    <th>Rank</th>
+	</tr>
+
+	<tr>
+		<td>Violent Crime</td>
+	  <td>{{selectedCity.vc | number: 0}}</td>
+    <td>{{selectedCity.vcPC | number: 0}}</td>
+    <td>{{selectedCity.vcRank}}</td>
+	</tr>
+
+  <tr>
+		<td>Murder and nonnegligent manslaughter</td>
+	  <td>{{selectedCity.murder | number: 0}}</td>
+    <td>{{selectedCity.murderPC | number: 0}}</td>
+    <td>{{selectedCity.murderRank}}</td>
+	</tr>
+
+
+  <tr>
+		<td>Rape(1)</td>
+	  <td>{{selectedCity.rape | number: 0}}</td>
+    <td>{{selectedCity.rapePC | number: 0}}</td>
+    <td>{{selectedCity.rapeRank}}</td>
+	</tr>
+
+  <tr>
+		<td>Rape(2)</td>
+	  <td>{{selectedCity.rapetwo | number: 0}}</td>
+    <td>{{selectedCity.rapetwoPC | number: 0}}</td>
+    <td>{{selectedCity.rapetwoRank}}</td>
+	</tr>
+
+  <tr>
+		<td>Robbery</td>
+	  <td>{{selectedCity.robbery | number: 0}}</td>
+    <td>{{selectedCity.robberPC | number: 0}}</td>
+    <td>{{selectedCity.robberyRank}}</td>
+	</tr>
+
+  <tr>
+		<td>Aggravated Assault</td>
+	  <td>{{selectedCity.agassault | number: 0}}</td>
+    <td>{{selectedCity.agassaultPC | number: 0}}</td>
+    <td>{{selectedCity.agassaultRank}}</td>
+	</tr>
+
+  <tr>
+		<td>Property Crime</td>
+	  <td>{{selectedCity.pc | number: 0}}</td>
+    <td>{{selectedCity.pcPC | number: 0}}</td>
+    <td>{{selectedCity.pcRank}}</td>
+	</tr>
+
+  <tr>
+		<td>Burglary</td>
+	  <td>{{selectedCity.burglary | number: 0}}</td>
+    <td>{{selectedCity.burglaryPC | number: 0}}</td>
+    <td>{{selectedCity.burglaryRank}}</td>
+	</tr>
+
+  <tr>
+		<td>Larceny-theft</td>
+	  <td>{{selectedCity.larceny | number: 0}}</td>
+    <td>{{selectedCity.larcenyPC | number: 0}}</td>
+    <td>{{selectedCity.larcenyRank}}</td>
+	</tr>
+
+  <tr>
+		<td>Motor Vehicle Theft</td>
+	  <td>{{selectedCity.mvtheft | number: 0}}</td>
+    <td>{{selectedCity.mvtheftPC | number: 0}}</td>
+    <td>{{selectedCity.mvtheftRank}}</td>
+	</tr>
+
+  <tr>
+		<td>Arson</td>
+	  <td>{{selectedCity.arson | number: 0}}</td>
+    <td>{{selectedCity.arsonPC | number: 0}}</td>
+    <td>{{selectedCity.arsonRank}}</td>
+	</tr>
+</div>
+</table>
+<p>- Data from <a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015">FBI UCR Report for 2015</a>. State ranking per capita. The lower the rank bumber, the higher the crime rate. 
+<p>Rape(1): Revised UCR definition of rape. </p>                       
+<p>Rape(2): Legacy UCR definition of rape.</p>
+</html>
+
